@@ -9,9 +9,12 @@ los empates se contabilizan como victorias para dicho agente
 
 from mazo import Mazo
 from agente import Agente
+import time
+
+start = time.process_time()
 
 partidaConFlor = False
-N=50000
+N=5000000
 victoriaAgente1 = victoriaAgente2 = cantEmpate= cantNoQuiero = partidasSinEnvido = cantNoquieroAgente1 = 0
 partidasConEnvido = 0
 for i in range(N):
@@ -63,3 +66,9 @@ print(f"\nCantidad de puntos obtenidos por el Agente 2 --> {puntosAgente2}")
 
 print(f"\nProcentaje de puntos obtenidos por el Agente 1 --> {round(100*puntosAgente1/(puntosAgente1+puntosAgente2),2)}%")
 print(f"\nProcentaje de puntos obtenidos por el Agente 2 --> {round(100*puntosAgente2/(puntosAgente1+puntosAgente2),2)}%")
+
+
+
+end = time.process_time()
+
+print(f"\nEl tiempo de ejecucion fue de: {end - start}")
